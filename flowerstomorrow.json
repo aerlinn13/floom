@@ -1,0 +1,32 @@
+{
+  "stock": [
+      {
+        "genus": "Rose",
+        "skus": [
+          {
+            "cultivar": "Red Rose Avalanche",
+            "colour": "Red",
+            "grower": "Flowers are us",
+            "maturity": 2
+          },
+          {
+            "cultivar": "Red Rose Avalanche",
+            "colour": "Red",
+            "grower": "Flowers and boxes",
+            "maturity": 3
+          }
+        ]
+      },
+      {
+        "genus": "Ranunculus",
+        "skus": [
+          {
+            "cultivar": "Ran su Firenze",
+            "colour": "Red",
+            "grower": "Flowers are us",
+            "maturity": 2
+          }
+        ]
+      }
+  ]
+}

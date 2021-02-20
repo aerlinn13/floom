@@ -1,0 +1,37 @@
+{
+  "supply": [
+    {
+      "title": "Red Rose Naomi",
+      "size": "L",
+      "maturity": 2,
+      "defs": {
+        "genus": "Rose",
+        "cultivar": "Red Rose Naomi",
+        "colour": "red",
+        "grower": "Flowers are us"
+      }
+    },
+    {
+      "title": "Naomi late july",
+      "size": "M",
+      "maturity": 3,
+      "defs": {
+        "genus": "Rose",
+        "cultivar": "Red Rose Naomi",
+        "colour": "red",
+        "grower": "Flowers are us"
+      }
+    },
+    {
+      "title": "White blitz",
+      "size": "S",
+      "maturity": 3,
+      "defs": {
+        "genus": "Rose",
+        "cultivar": "Red Rose Avalanche",
+        "colour": "red",
+        "grower": "Flowers and boxes"
+      }
+    }
+  ]
+}
