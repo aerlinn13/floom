@@ -16,16 +16,6 @@ app.get("/products", (req, res) => {
         .then((products) => res.json(products))
         .catch((err) => res.status(500).json(err));
 });
-app.get("/florists", (req, res) => {
-    index_1.Florist.findAll({})
-        .then((florists) => res.json(florists))
-        .catch((err) => res.status(500).json(err));
-});
-app.get("/florists", (req, res) => {
-    index_1.Flower.findAll({})
-        .then((flower) => res.json(flower))
-        .catch((err) => res.status(500).json(err));
-});
 // start the Express server
 app.listen(port, () => {
     // tslint:disable-next-line:no-console

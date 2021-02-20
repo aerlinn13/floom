@@ -20,5 +20,5 @@ product_1.Product.belongsToMany(flower_1.Flower, {
     as: "product",
     foreignKey: "product_id"
 });
-db_1.database.sync({ force: true });
+db_1.database.sync();
 //# sourceMappingURL=index.js.map

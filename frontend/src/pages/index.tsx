@@ -1,12 +1,13 @@
 import React from 'react';
 import { PageProps } from 'gatsby';
 
-import Title from '@/components/Title';
+import Title from '@/components/_shared/Title';
+import Layout from '@/components/_shared/Layout';
 
-const Home: React.FC<PageProps> = () => (
-  <main>
-    <Title title="Home"/>
-  </main>
+const ProductList: React.FC<PageProps> = () => (
+  <Layout>
+    <Title title="Products" />
+  </Layout>
 );
 
-export default Home;
+export default ProductList;
