@@ -1,5 +1,5 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import '../../static/styles/typography.css';
 
 const GlobalStyle = createGlobalStyle`
@@ -9,10 +9,16 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
+
 export const Layout: React.FC = ({ children }) => (
   <>
     <GlobalStyle />
-    {children}
+    <Container>{children}</Container>
   </>
 );
 
