@@ -5,6 +5,12 @@ import {Florist, Product, Flower} from './models/index';
 const app = express();
 const port = 8080; // default port to listen
 
+app.all('*', (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+   });
+
 // define a route handler for the default home page
 app.get( "/", ( req, res ) => {
     res.send( "v1.0.0" );
