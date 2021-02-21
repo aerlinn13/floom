@@ -1,6 +1,6 @@
 import express from "express";
 
-import {Florist, Product, Flower} from './models/index';
+import { Florist, Product, Flower } from './models/index';
 
 const app = express();
 const port = 8080; // default port to listen
@@ -17,7 +17,12 @@ app.get( "/", ( req, res ) => {
 } );
 
 app.get( "/products", ( req, res ) => {
-    Product.findAll<Product>({})
+    Product.findAll<Product>({
+        include: {
+            model: Flower,
+            through: { attributes: [] }
+        }
+    })
       .then((products: Product[]) => res.json(products))
       .catch((err: Error) => res.status(500).json(err));
 });

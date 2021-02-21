@@ -10,14 +10,12 @@ Florist.hasMany(Product, {as: 'products', foreignKey: 'floristId'});
 
 Flower.belongsToMany(Product, {
   through: 'product_flowers',
-  as: "flower",
   foreignKey: "flower_id" });
 
 Product.belongsToMany(Flower, {
   through: 'product_flowers',
-  as: "product",
   foreignKey: "product_id" });
 
 database.sync();
 
-export {Florist, Product, Flower};
+export { Florist, Product, Flower };
