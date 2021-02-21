@@ -14,11 +14,17 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 10px;
 `;
 
 const Name = styled.div`
+  margin: 10px auto 30px 10px;
   color: #00124f;
+`;
+
+const ImagePlaceholder = styled.div`
+  height: 200px;
+  width: 100%;
+  background-color: lightgray;
 `;
 
 type Props = {
@@ -29,6 +35,7 @@ const ProductListItem = ({ product }: Props) => (
   <Link to="productdetail" state={product}>
     <Wrapper>
       <Name>{product.name}</Name>
+      <ImagePlaceholder />
     </Wrapper>
   </Link>
 );
