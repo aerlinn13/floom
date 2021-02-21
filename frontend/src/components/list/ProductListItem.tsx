@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { Product } from '@/typings';
+import { IProduct } from '@/typings';
 
 const Wrapper = styled.div`
   height: 300px;
@@ -28,7 +28,7 @@ const ImagePlaceholder = styled.div`
 `;
 
 type Props = {
-  product: Product;
+  product: IProduct;
 };
 
 const ProductListItem = ({ product }: Props) => (

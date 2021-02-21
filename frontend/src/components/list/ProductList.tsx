@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Product } from '@/typings';
+import { IProduct } from '@/typings';
 import ProductListItem from './ProductListItem';
 
 const Wrapper = styled.div`
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `;
 
 type Props = {
-  products: Product[] | null;
+  products: IProduct[] | null;
   searchText: string;
 };
 
