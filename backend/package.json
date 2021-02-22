@@ -13,6 +13,7 @@
   "author": "A Hendry-Nunn",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "sequelize": "^6.5.0",
     "sqlite3": "^5.0.1"

@@ -10,3 +10,13 @@ export interface IFlower {
   name: string;
   color: string;
 }
+
+export interface ISKU {
+  title: string;
+  genus: string;
+  cultivar: string;
+  color: string;
+  size: string;
+  maturity: number;
+  grower: string;
+}

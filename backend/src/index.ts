@@ -1,4 +1,5 @@
 import express from "express";
+import wholesalerService from "./integrations/wholesalers/wholesalerService";
 
 import { Florist, Product, Flower } from './models/index';
 
@@ -29,6 +30,7 @@ app.get( "/products", ( req, res ) => {
 
 // start the Express server
 app.listen( port, () => {
+    wholesalerService();
     // tslint:disable-next-line:no-console
     console.log( `server started at http://localhost:${ port }` );
 } );

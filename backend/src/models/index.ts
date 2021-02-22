@@ -4,6 +4,7 @@ import { database } from "../config/db";
 import { Florist } from "./florist";
 import { Flower } from "./flower";
 import { Product } from "./product";
+import { SKU } from './sku';
 
 Product.belongsTo(Florist, {foreignKey: 'floristId'});
 Florist.hasMany(Product, {as: 'products', foreignKey: 'floristId'});
@@ -18,4 +19,4 @@ Product.belongsToMany(Flower, {
 
 database.sync();
 
-export { Florist, Product, Flower };
+export { Florist, Product, Flower, SKU };
