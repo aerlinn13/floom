@@ -1,7 +1,8 @@
 import express from "express";
+import sequelize from "sequelize";
 import wholesalerService from "./integrations/wholesalers/wholesalerService";
 
-import { Florist, Product, Flower } from './models/index';
+import { Florist, Product, Flower, SKU } from './models/index';
 
 const app = express();
 const port = 8080; // default port to listen
@@ -21,10 +22,20 @@ app.get( "/products", ( req, res ) => {
     Product.findAll<Product>({
         include: {
             model: Flower,
-            through: { attributes: [] }
+            through: { attributes: [] },
         }
     })
       .then((products: Product[]) => res.json(products))
+      .catch((err: Error) => res.status(500).json(err));
+});
+
+app.get( "/wholesales/:flowerName", ( req, res ) => {
+    SKU.findAll<SKU>({
+        where: {
+            genus: req.params.flowerName
+        }
+    })
+      .then((skus: SKU[]) => res.json(skus.sort((a, b) => a.source.localeCompare(b.source) )))
       .catch((err: Error) => res.status(500).json(err));
 });
 

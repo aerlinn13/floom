@@ -19,4 +19,5 @@ export interface ISKU {
   size: string;
   maturity: number;
   grower: string;
+  source: string;
 }

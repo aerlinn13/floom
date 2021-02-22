@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { PageProps, Link } from 'gatsby';
+import { PageProps } from 'gatsby';
 import axios from 'axios';
 
-import { Product } from '@/typings';
+import { IProduct } from '@/typings';
 import Title from '@/components/_shared/Title';
 import Layout from '@/components/_shared/Layout';
 import SearchForm from '@/components/_shared/SearchForm';
@@ -10,7 +10,7 @@ import ProductList from '@/components/list/ProductList';
 
 const ProductListPage: React.FC<PageProps> = () => {
   const [searchText, setSearchText] = useState('');
-  const [products, setProducts] = useState<Product[] | null>(null);
+  const [products, setProducts] = useState<IProduct[] | null>(null);
 
   useEffect(() => {
     axios.get('http://localhost:8080/products').then((response) => {
