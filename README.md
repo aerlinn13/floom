@@ -3,12 +3,16 @@ Dear Richie and Ashley, thank you for the opportunity to solve this exercise.
 
 ### Overall Task
 
-This is how my Product page looks like. ![Product List](media/ProductList.png)
+*This is how my Product page looks like.*
+
+ ![Product List](media/ProductList.png)
 
 
-And this is product details. ![Product Details](media/ProductDetails.png)
+*And this is product details.*
 
-I have included Flower model into Product so I don't need to have additional request to retrieve flowers for a product.
+ ![Product Details](media/ProductDetails.png)
+
+*I have included Flower model into Product so I don't need to have additional request to retrieve flowers for a product.*
 
 ### Subtask 1 (data model design)
 We don’t have an approach defined yet for storing additional flower attributes in our platform or our database, so you have freedom to decide how you want to implement this.
@@ -17,7 +21,7 @@ Whatever approach you take, it needs to be extensible to support additional attr
 
 *Solution*
 
-I have extended flower model by migration, with sequelize it's fairly easy and allows to extend models as much as we would like. Sequelize also supports virtual fields, but in that case common migration would be just fine.
+*I have extended flower model by migration, with sequelize it's fairly easy and allows to extend models as much as we would like. Sequelize also supports virtual fields, but in that case common migration would be just fine.*
 
 
 ### Subtask 2 (backend + frontend)
@@ -30,7 +34,7 @@ You have the freedom to decide where you want to show the items being sold. For 
 
 *Solution*
 
-The `wholesalerService` invokes two providers for one wholesaler each. Each provider requests 3rd party endpoint and maps out results into SKU data model. Unfortunately I wasn't able to quickly fix association so that I can retrieve skus as property of each flower model, so I've created another endpoint that fetches SKUs based on flower name. Going forward that approach could be even more beneficial as it is easier to invalidate that data and request new one.
+*The `wholesalerService` invokes two providers for one wholesaler each. Each provider requests 3rd party endpoint and maps out results into SKU data model. Unfortunately I wasn't able to quickly fix association so that I can retrieve skus as property of each flower model, so I've created another endpoint that fetches SKUs based on flower name. Going forward that approach could be even more beneficial as it is easier to invalidate that data and request new one.*
 
 ### Bonus Items (implement only 1 of 2)
 ### Subtask 3
@@ -38,7 +42,7 @@ On the product list page, implement a search that shows all products that match 
 
 *Solution*
 
-`SearchTypeSelect` component allows user to switch between searching either within product name or flower name.
+*`SearchTypeSelect` component allows user to switch between searching either within product name or flower name.*
 
 ### Subtask 4
 Extend the API to check for whether an item being sold is or isn’t in stock at a specific time and adjust your display to take this into account
