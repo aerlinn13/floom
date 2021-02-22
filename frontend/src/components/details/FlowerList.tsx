@@ -22,7 +22,7 @@ const FlowerList = ({ flowers }: Props) => (
     <Header>Flowers</Header>
     <Container>
       {flowers.map((flower) => (
-        <FlowerListItem flower={flower} />
+        <FlowerListItem key={flower.name} flower={flower} />
       ))}
     </Container>
   </>

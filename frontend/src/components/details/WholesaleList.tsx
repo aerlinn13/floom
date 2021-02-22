@@ -9,8 +9,8 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  height: 120px;
-  width: 320px;
+  height: 140px;
+  width: 400px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -49,10 +49,10 @@ type Props = {
 const WholesaleList = ({ skus }: Props) => (
   <Container>
     {skus?.map((sku) => (
-      <Wrapper>
+      <Wrapper key={sku.id}>
         <ImagePlaceholder />
         <Container>
-          <Title>{sku.title || sku.cultivar}</Title>
+          <Title>{sku.title ? `${sku.title} (${sku.cultivar})` : sku.cultivar}</Title>
           <Source>{`Wholesaler: ${sku.source}`}</Source>
           {sku.size && <Content>{`Size: ${sku.size}`}</Content>}
           {sku.maturity && <Content>{`Maturity: ${sku.maturity}`}</Content>}

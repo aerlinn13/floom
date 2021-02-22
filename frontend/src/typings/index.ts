@@ -12,6 +12,7 @@ export interface IFlower {
 }
 
 export interface ISKU {
+  id: number;
   title: string;
   genus: string;
   cultivar: string;

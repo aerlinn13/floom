@@ -9,26 +9,28 @@ import SearchForm from '@/components/_shared/SearchForm';
 import ProductList from '@/components/list/ProductList';
 
 const ProductListPage: React.FC<PageProps> = () => {
-  const [searchText, setSearchText] = useState('');
-  const [products, setProducts] = useState<IProduct[] | null>(null);
+	const [ searchText, setSearchText ] = useState('');
+	const [ searchType, setSearchType ] = useState<string>('product');
+	const [ products, setProducts ] = useState<IProduct[] | null>(null);
 
-  useEffect(() => {
-    axios.get('http://localhost:8080/products').then((response) => {
-      setProducts(response.data);
-    });
-  }, []);
+	useEffect(() => {
+		axios.get('http://localhost:8080/products').then((response) => {
+			setProducts(response.data);
+		});
+	}, []);
 
-  return (
-    <Layout>
-      <Title title="Products" />
-      <SearchForm
-        onChange={setSearchText}
-        value={searchText}
-        placeholder="Search"
-      />
-      <ProductList products={products} searchText={searchText} />
-    </Layout>
-  );
+	return (
+		<Layout>
+			<Title title="Products" />
+			<SearchForm
+				onChange={setSearchText}
+				onChangeSearchType={setSearchType}
+				value={searchText}
+				placeholder="Search"
+			/>
+			<ProductList products={products} searchType={searchType as 'product' | 'flower'} searchText={searchText} />
+		</Layout>
+	);
 };
 
 export default ProductListPage;
